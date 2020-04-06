@@ -3,16 +3,20 @@
 
 #include <SDL2/SDL.h>
 #include "screen.h"
+#include "../../game_objects/headers/field.h"
 
 class StartScreen {
 public:
 	StartScreen(SDL_Renderer* _renderer);
+	~StartScreen();
 
+	void eventHandler();
+	void init();
 	void run();
 	void render();
-	void eventHandler();
 private:
 	SDL_Renderer* renderer;
+	Field* field;	
 };
 
 #endif

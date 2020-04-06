@@ -14,8 +14,8 @@ void Game::init() {
 			"Game", 
 			SDL_WINDOWPOS_CENTERED, 
 			SDL_WINDOWPOS_CENTERED, 
-			1000, 
-			1000, 
+			SCREEN_W, 
+			SCREEN_H, 
 			0
 	);
 	renderer = SDL_CreateRenderer(window, -1, 0);
