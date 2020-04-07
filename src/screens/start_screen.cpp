@@ -5,7 +5,6 @@ StartScreen::StartScreen(SDL_Renderer* _renderer) {
 }
 
 StartScreen::~StartScreen() {
-	free(field);
 }
 
 void StartScreen::eventHandler() {
