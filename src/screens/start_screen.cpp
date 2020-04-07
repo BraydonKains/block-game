@@ -33,9 +33,9 @@ void StartScreen::run() {
 void StartScreen::render() {
 	SDL_RenderClear(renderer);
 
-	SDL_Texture* field_texture = SDL_CreateTextureFromSurface(renderer, field->getSurface());
+	RenderData field_render = field->getRenderData();
 	
-	SDL_RenderCopy(renderer, field_texture, NULL, NULL);
+	/* SDL_RenderCopy(renderer, field_texture, NULL, NULL); */
 
 	SDL_RenderPresent(renderer);
 }

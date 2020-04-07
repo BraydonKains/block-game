@@ -3,12 +3,13 @@
 Field::Field(int _width, int _height) {
 	width = _width;
 	height = _height;
-	field_surface = SDL_CreateRGBSurface(0, width, height, 32, 100, 100, 100, 200);
+	field_surface = SDL_LoadBMP("assets/white.bmp");
 }
 
 Field::~Field() {
 }
 
-SDL_Surface* Field::getSurface() {
-	return field_surface;
+RenderData Field::getRenderData() {
+	RenderData x;
+	return x;
 }

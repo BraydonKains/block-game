@@ -22,6 +22,14 @@ void Game::init() {
 }
 
 void Game::play() {
+	// DELETE THIS WHEN DONE
+
+	SDL_RenderClear(renderer);
+	SDL_Surface* field_surface;
+	field_surface = SDL_LoadBMP("assets/white.bmp");
+	SDL_Texture* field_texture = SDL_CreateTextureFromSurface(renderer, field_surface);
+	SDL_FreeSurface(field_surface); /* we got the texture now -> free surface */
+
 	StartScreen start_screen(renderer);
 	while(game_state != Quit) {
 		switch(game_state) {

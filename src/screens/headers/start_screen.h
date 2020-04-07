@@ -16,6 +16,7 @@ public:
 	void render();
 private:
 	SDL_Renderer* renderer;
+	SDL_Surface* loading_surface;
 	Field* field;	
 };
 

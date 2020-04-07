@@ -5,6 +5,7 @@
 #define FIELD_Y 12
 
 #include <SDL2/SDL.h>
+#include "../../engine/headers/render_data.h"
 
 class Field {
 public:
@@ -14,7 +15,7 @@ public:
 	Field(int _width, int _height);
 	~Field();
 
-	SDL_Surface* getSurface();
+	RenderData getRenderData();
 private:
 	SDL_Surface* field_surface;
 };

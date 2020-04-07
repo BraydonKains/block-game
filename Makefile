@@ -1,7 +1,7 @@
 .SUFFIXES: .cpp .c .o
 
 C=g++
-CFLAGS=-Wall
+CFLAGS=-g
 LDFLAGS=-L/usr/lib -lSDL2
 
 OBJ_DIR=obj
@@ -27,31 +27,31 @@ clean:
 	rm -rf obj/*.o $(OUT)
 
 main_game: $(OBJS)
-	$(C) $(INCLUDES) $(OBJS) -o $(OUT) $(CFLAGS) $(LDFLAGS)
+	$(C) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(OUT) $(CFLAGS) $(LDFLAGS)
 
 $(OBJ_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
-	$(C) -c -o $@ $<
+	$(C) $(CFLAGS) -c -o $@ $<
 
 ######################
 # Engine Rule
 ######################
 
 $(OBJ_DIR)/%.o: $(ENG_DIR)/%.cpp 
-	$(C) -c -o $@ $<
+	$(C) $(CFLAGS) -c -o $@ $<
 
 ######################
 # Screen Objects Rule
 ######################
 
 $(OBJ_DIR)/%.o: $(SCREEN_DIR)/%.cpp
-	$(C) -c -o $@ $<
+	$(C) $(CFLAGS) -c -o $@ $<
 
 ######################
 # Game Objects Rule
 ######################
 
 $(OBJ_DIR)/%.o: $(GO_DIR)/%.cpp
-	$(C) -c -o $@ $<
+	$(C) $(CFLAGS) -c -o $@ $<
